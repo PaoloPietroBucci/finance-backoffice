@@ -1,0 +1,87 @@
+<div class="container">
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="/docs/5.3/assets/brand/bootstrap-logo.svg"
+          alt="Logo"
+          width="30"
+          height="24"
+          class="d-inline-block align-text-top"
+        />
+        Bootstrap
+      </a>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <form [formGroup]="articleForm" (submit)="uploadArticle()">
+      <div class="mb-3">
+        <label for="titolo" class="form-label">Titolo articolo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="titolo"
+          formControlName="title"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="immagine" class="form-label">Immagine</label>
+        <input
+          type="file"
+          class="form-control"
+          id="immagine"
+          (change)="handleFileInput($event)"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="abstract" class="form-label">Abstract</label>
+        <input
+          type="text"
+          class="form-control"
+          id="abstract"
+          formControlName="abstract"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <input
+          type="text"
+          class="form-control"
+          id="text"
+          formControlName="text"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <select
+          class="form-select mb-3"
+          aria-label="Default select example"
+          class="form-control"
+          id="author"
+          formControlName="author"
+        >
+          <option value="Pietro Turolla">Pietro Turolla</option>
+          <option value="Filippo Fassa">Filippo Fassa</option>
+          <option value="Alberto">Alberto</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="categories" class="form-label">Categories</label>
+          <div class="form-check" *ngFor="let cat of categories">
+            <input class="form-check-input" (change)="addCategory($event)" [name]="cat" type="checkbox" [id]="cat" formControlName="categories">
+            <label class="form-check-label" [for]="cat">{{cat}}</label>
+          </div>
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          formControlName="date"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
