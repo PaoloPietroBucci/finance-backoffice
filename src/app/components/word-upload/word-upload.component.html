@@ -1,0 +1,36 @@
+<div class="container mt-5 pt-5">
+    <div class="container-fluid">
+      <form [formGroup]="wordForm" (submit)="uploadWord()">
+        <div class="mb-3">
+          <label for="word" class="form-label">Word</label>
+          <input
+            type="text"
+            class="form-control"
+            id="word"
+            formControlName="word"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="definition" class="form-label">Definition</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="definition"
+            id="definition"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="notes" class="form-label">Add Notes</label>
+          <input
+            type="text"
+            class="form-control"
+            id="notes"
+            formControlName="notes"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+

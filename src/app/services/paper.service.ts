@@ -11,7 +11,7 @@ export class PaperService {
 
   constructor(private http:HttpClient) { }
 
-  url = environment.apiUrl+'api';
+  url = environment.apiUrl + '/paper';
 
   uploadPaper(newPaper: FormData):Observable<HttpResponse<null>>{
     return this.http.post<HttpResponse<null>>(this.url+'/upload', newPaper);

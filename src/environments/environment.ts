@@ -1,4 +1,4 @@
 export const environment = {
     production: true , 
-    apiUrl:'http://my-prod-url'
+    apiUrl:'https://test-financeapp-be.onrender.com/api'
 };

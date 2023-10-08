@@ -1,0 +1,13 @@
+.content a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    width: 60%;
+    font-size: xx-large;
+}
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
